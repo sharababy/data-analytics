@@ -17,7 +17,7 @@ graphviz
 
 
 To execute any given file (=filename)
-> python3 <filename>
+> python3 filename
 
 To create the decision tree pdf:
 > dot -Tpdf decisiontree.dot -o tree.pdf
