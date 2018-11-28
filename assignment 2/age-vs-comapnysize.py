@@ -7,20 +7,20 @@ import operator
 
 CarSatAge = {}
 
-with open('survey_results_public.csv') as csvfile:
+with open('../survey_results_public.csv') as csvfile:
 # with open('train-01.csv') as csvfile:
 	readCSV = csv.reader(csvfile, delimiter=',')
 	next(readCSV)  # Skip header line
 	for row in readCSV:		
 		# a = list(map(float, row))
-		if (row[13] in CarSatAge) == False:
-			CarSatAge[row[13]] = {}
+		if (row[8] in CarSatAge) == False:
+			CarSatAge[row[8]] = {}
 		try:
-			if (row[124] in CarSatAge[row[13]]) == False and row[124] != "NA":
-				CarSatAge[row[13]][row[124]] = 0
+			if (row[124] in CarSatAge[row[8]]) == False and row[124] != "NA":
+				CarSatAge[row[8]][row[124]] = 0
 
-			if (row[124] in CarSatAge[row[13]]):
-				CarSatAge[row[13]][row[124]] += 1
+			if (row[124] in CarSatAge[row[8]]):
+				CarSatAge[row[8]][row[124]] += 1
 			
 		except ValueError:
 		    pass
@@ -63,7 +63,7 @@ plt.legend(lines, labels, loc="best")
 
 plt.xlabel('Age')
 plt.ylabel('Num Users')
-plt.title('Age vs Satisfaction')
+plt.title('Age vs Company Size')
  
 plt.show()
 

@@ -8,7 +8,7 @@ import operator
 
 X = {}
 
-with open('survey_results_public.csv') as csvfile:
+with open('../survey_results_public.csv') as csvfile:
 # with open('train-01.csv') as csvfile:
 	readCSV = csv.reader(csvfile, delimiter=',')
 	next(readCSV)  # Skip header line
